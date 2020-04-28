@@ -1,5 +1,4 @@
 /* Author - Raj Kumar Sanpui (raj.kumar.sanpui@gmail.com)
-/*
 /* Data Structures - Hashing in C     
 /*   with Separate chaining as collision resolution technique */
 
