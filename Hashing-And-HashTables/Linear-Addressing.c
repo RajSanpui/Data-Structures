@@ -19,9 +19,9 @@ int insert(int data)
   int slot, i;
   slot = HASH(data);
 
-  if(hashTable[slot] == -1)
+  if(hashTable[slot - 1] == -1)
   {
-     hashTable[slot] = data;
+     hashTable[slot - 1] = data;
      printf("Key: %d, is mapped to slot: %d \n",data,slot);
      return 1;
   }
@@ -29,10 +29,11 @@ int insert(int data)
   // Original slot not empty so find an empty slot
   for (i=1; i<=SIZE; i++)
   {
-    if(hashTable[(slot + i) % SIZE] == -1)
+    if(hashTable[(slot -1 + i) % SIZE] == -1)
     {
-       hashTable[(slot + i) % SIZE] = data;
-       printf("Key: %d, is mapped to slot: %d \n",data,((slot + i) % SIZE));
+       hashTable[(slot -1 + i) % SIZE] = data;
+       // Array index starts from 0, but while mentioning we mention it starts from 1, hence (((slot -1 + i) % SIZE)+1)
+       printf("Key: %d, is mapped to slot: %d \n",data,(((slot -1 + i) % SIZE)+1));
        return 1;
     }
   }
@@ -48,19 +49,24 @@ int searchkey(int data)
   int slot, i;
   slot = HASH(data);
 
-  if(hashTable[slot] == -1)
+  if(hashTable[slot - 1] == -1)
   {
-     hashTable[slot] = data;
-     printf("Key: %d, is mapped to slot: %d \n",data,slot);
+     printf("ERROR: Key %d, is not found in slot: %d \n",data,slot);
+     return 0;
+  }
+  else if(hashTable[slot - 1] == data)
+  {
+     printf("SUCCESS: Key %d, is found in slot: %d \n",data,slot);
      return 1;
   }
 
   // Original slot not found so find if present in other slots
   for (i=1; i<=SIZE; i++)
   {
-    if(hashTable[(slot + i) % SIZE] == data)
+    if(hashTable[(slot -1 + i) % SIZE] == data)
     {
-       printf("FOUND: Key %d, is mapped to slot: %d \n",data,((slot + i) % SIZE));
+       // Array index starts from 0, but while mentioning we mention it starts from 1, hence (((slot -1 + i) % SIZE)+1)
+       printf("SUCCESS: Key %d, is mapped to slot: %d \n",data,(((slot -1 + i) % SIZE)+1));
        return 1;
     }
   }
