@@ -17,5 +17,5 @@ main.o: main.c
 	${CC} ${FLAGS} -c main.c printNode.c insertNode.c
 
 clean:
-	rm -rf *.o linkedlist
+	rm -rf *.o *.gch linkedlist
 
