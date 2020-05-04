@@ -13,6 +13,7 @@
 #include "insertNode.h"
 #include "printNode.h"
 #include "nodeStruct.h"
+#include "reverseLinkedList.h"
 
 
 int main()
@@ -26,6 +27,8 @@ int main()
 	insertNode(&root, 5);
 	insertNode(&root, 17);
 
+	printNode(root);
+	reverseLinkedList(&root);
 	printNode(root);
 }
 

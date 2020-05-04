@@ -4,14 +4,17 @@ FLAGS:= -g -Wall
 
 all: linkedlist
 
-linkedlist: printNode.o insertNode.o main.o 
-	${CC} ${FLAGS} -o linkedlist printNode.o insertNode.o main.o
+linkedlist: printNode.o insertNode.o reverseLinkedList.o main.o 
+	${CC} ${FLAGS} -o linkedlist printNode.o insertNode.o reverseLinkedList.o main.o
 
 printNode.o:
 	${CC} ${FLAGS} -c printNode.c printNode.h
 
 insertNode.o:
 	${CC} ${FLAGS} -c insertNode.c insertNode.h
+
+reverseLinkedList.o:
+	${CC} ${FLAGS} -c reverseLinkedList.c reverseLinkedList.h
 
 main.o: main.c
 	${CC} ${FLAGS} -c main.c printNode.c insertNode.c
