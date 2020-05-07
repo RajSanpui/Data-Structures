@@ -14,6 +14,8 @@
 #include "printNode.h"
 #include "nodeStruct.h"
 #include "reverseLinkedList.h"
+#include "insertAfter.h"
+#include "findMidNode.h"
 
 
 int main()
@@ -30,5 +32,11 @@ int main()
 	printNode(root);
 	reverseLinkedList(&root);
 	printNode(root);
+
+	printf("\n Node to be inserted after node 25 \n");
+	insertAfter(&root, 25, 28);
+	printNode(root);
+
+	findMidNode(root);
 }
 
