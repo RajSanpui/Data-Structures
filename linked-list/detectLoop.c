@@ -7,9 +7,13 @@
  * 	Increment fast pointer twice and slow pointer once
  * 	If fast and slow meet at a point, then there is a loop.
  * 	If fast reaches NULL, then no loop.
+ *
+ *      Return:
+ *            0 - No loop detected
+ *            1 - Loop is detected
  */
 #include "detectLoop.h"
-void detectLoop(node *root)
+int detectLoop(node *root)
 {
 	node *fast, *slow;
 	fast = slow = root;
@@ -23,7 +27,7 @@ void detectLoop(node *root)
 		if (fast == slow)
 		{
 			printf("Loop detected in the linked list\n");
-			return;
+			return 1;
 		}
 
 	}
@@ -31,6 +35,7 @@ void detectLoop(node *root)
 	if (fast != slow)
 	{
 		printf("No loop in linked list. \n");
+		return 0;
 	}
 }
 

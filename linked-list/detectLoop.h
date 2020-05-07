@@ -14,6 +14,6 @@
 #include <stdlib.h>
 #include "nodeStruct.h"
 
-void detectLoop(node *root);
+int detectLoop(node *root);
 
 #endif
