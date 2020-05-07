@@ -1,19 +1,19 @@
 /* Linked list and it's operations
- * Prints the linked list nodes 
+ * detectLoop - Detects loop in a linked list 
+ *     using Floyd's cycle detection algorithm.
  * 
  * Author - Raj Kumar Sanpui (raj.kumar.sanpui@gmail.com)
  * https://github.com/RajSanpui
  * 
  */
 
-#ifndef __PRINTNODE_H
-#define __PRINTNODE_H
+#ifndef __DETECTLOOP_H
+#define __DETECTLOOP_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "nodeStruct.h"
 
-void printNode(node *root);
+void detectLoop(node *root);
 
 #endif
-

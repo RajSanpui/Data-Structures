@@ -1,19 +1,19 @@
 /* Linked list and it's operations
- * Prints the linked list nodes 
+ * Creates a loop to a linear linked list 
  * 
  * Author - Raj Kumar Sanpui (raj.kumar.sanpui@gmail.com)
  * https://github.com/RajSanpui
  * 
  */
 
-#ifndef __PRINTNODE_H
-#define __PRINTNODE_H
+#ifndef __ADDLOOP_H
+#define __ADDLOOP_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "nodeStruct.h"
 
-void printNode(node *root);
+void addLoop(node **root, int loopAfter);
 
 #endif
 

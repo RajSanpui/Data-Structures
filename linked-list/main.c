@@ -16,6 +16,8 @@
 #include "reverseLinkedList.h"
 #include "insertAfter.h"
 #include "findMidNode.h"
+#include "addLoop.h"
+#include "detectLoop.h"
 
 
 int main()
@@ -37,6 +39,10 @@ int main()
 	insertAfter(&root, 25, 28);
 	printNode(root);
 
+	detectLoop(root);
 	findMidNode(root);
+	addLoop(&root, 3);
+	//printNode(root);
+	detectLoop(root);
 }
 
