@@ -13,8 +13,9 @@
  *            1 - Loop is detected
  */
 #include "detectLoop.h"
-int detectLoop(node *root)
+void detectLoop(node *root)
 {
+	int isloop;
 	node *fast, *slow;
 	fast = slow = root;
 
@@ -27,7 +28,8 @@ int detectLoop(node *root)
 		if (fast == slow)
 		{
 			printf("Loop detected in the linked list\n");
-			return 1;
+			isloop = 1;
+			break;
 		}
 
 	}
@@ -35,8 +37,20 @@ int detectLoop(node *root)
 	if (fast != slow)
 	{
 		printf("No loop in linked list. \n");
-		return 0;
+		isloop = 0;
 	}
+
+	// Find the start node of the loop
+	if (isloop)
+	{
+		while (fast->next != slow) 
+		{
+			fast = fast->next;
+		}
+		printf("\n Start node of the loop is: %d", fast->data);	
+	}
+
+
 }
 
 
