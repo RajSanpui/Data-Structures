@@ -41,8 +41,9 @@ int main()
 
 	detectLoop(root);
 	findMidNode(root);
+
 	addLoop(&root, 3);
-	//printNode(root);
+	// printNode(root); This will go to infinite loop
 	detectLoop(root);
 }
 

@@ -15,7 +15,7 @@
 #include "detectLoop.h"
 void detectLoop(node *root)
 {
-	int isloop;
+	int isloop = 0;
 	node *fast, *slow;
 	fast = slow = root;
 
@@ -40,14 +40,17 @@ void detectLoop(node *root)
 		isloop = 0;
 	}
 
+	
 	// Find the start node of the loop
 	if (isloop)
 	{
-		while (fast->next != slow) 
+		fast = root;
+		while (fast != slow) 
 		{
 			fast = fast->next;
+			slow = slow->next;
 		}
-		printf("\n Start node of the loop is: %d", fast->data);	
+		printf("\n Start node of the loop is: %d \n",fast->data);
 	}
 
 
