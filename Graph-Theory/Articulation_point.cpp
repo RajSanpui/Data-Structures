@@ -29,7 +29,7 @@ void dfs(int Graph[V][V], int start)
             dfs(Graph, i);
             minArr[start] = min(minArr[i], minArr[start]);
           }
-          else {
+          else if (parent[i] != start) {
              minArr[start] = min(discArr[i], minArr[start]); // Back-edge case
           } 
       }
